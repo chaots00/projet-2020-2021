@@ -22,3 +22,4 @@ style(app,queryPromise);
 app.listen(port, function () {
   console.log(`server started :${port}`);
 });
+ 
