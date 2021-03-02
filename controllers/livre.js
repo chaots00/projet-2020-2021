@@ -1,4 +1,4 @@
-
+const Joi = require('joi');
 
 module.exports = function(app,queryPromise){
 
@@ -51,6 +51,23 @@ app.get("/api/livres", async (req, res) => {
   //#region ajouter
   app.post("/api/livres/", async  (req, res)=> { 
     const {titre ,style_id ,tome , auteur } = req.body; // recuperation des données
+
+    const schema = Joi.object({
+      titre: Joi.string().required(),
+      style_id: Joi.number().required(),
+      auteur: Joi.string().required(),
+      tome: Joi.number(),
+    });
+
+    const {error,value} = schema.validate(req.body);
+    console.log('error',error);
+    console.log('value',value);
+
+    if(error != null) {
+      const firstError = error.details[0];
+      return res.status(400).json({error:firstError.message});
+    }
+
   try {
     const {insertId,} = await queryPromise('insert into livre (titre,style_id,tome,auteur) values (?,?,?,?)',[titre,style_id,tome,auteur]);
     if (insertId != null) {
