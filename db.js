@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'ma_biblio',
+    host: '51.91.208.24',
+    user: '',
+    password: '',
+    database: 'cyberbibli',
 });
 
 connection.connect();
