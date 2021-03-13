@@ -4,8 +4,9 @@ const connection = mysql.createConnection({
     user: 'ludo',
     password: `@C-UYa<6f\@jWyJ'`,
     database: 'cyberbibli',
+    
 });
-
+console.log("test", connection);
 connection.connect();
 
 module.exports = connection;
