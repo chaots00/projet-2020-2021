@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     database: 'cyberbibli',
     
 });
-console.log("test", connection);
+console.log( connection );
 connection.connect();
 
-module.exports = connection;
+module.exports = connection; 
