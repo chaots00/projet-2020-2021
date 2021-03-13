@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+console.log( "hello world" );
 const connection = mysql.createConnection({
     host: '135.125.95.178',
     user: 'ludo',
@@ -6,7 +7,7 @@ const connection = mysql.createConnection({
     database: 'cyberbibli',
     
 });
-console.log( connection );
+
 connection.connect();
 
 module.exports = connection; 
