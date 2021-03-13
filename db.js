@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: '51.91.208.24',
-    user: '',
-    password: '',
+    host: '135.125.95.178',
+    user: 'ludo',
+    password: "@C-UYa<6f\@jWyJ'",
     database: 'cyberbibli',
 });
 
